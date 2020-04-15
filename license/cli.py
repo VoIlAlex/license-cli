@@ -4,13 +4,10 @@ from license.manager import LicenseManager
 from appdata import AppDataPaths
 from loguru import logger
 
-@click.command()
-@click.argument('license-name')
-@click.option('-p', '--print', 'print_', is_flag=True)
-def cli(license_name, print_):
+def main(license_name, print_):
     app_data_paths = AppDataPaths(
-        app_name='license', 
-        root_appdata='.opensource', 
+        app_name='license',
+        root_appdata='.opensource',
         with_dot=False
     )
     if app_data_paths.require_setup():
@@ -33,3 +30,9 @@ def cli(license_name, print_):
     else:
         with open('./LICENSE.md', 'w+') as f:
             f.write(license_content)
+
+@click.command()
+@click.argument('license-name')
+@click.option('-p', '--print', 'print_', is_flag=True)
+def cli(*args, **kwargs):
+    main(*args, **kwargs)
