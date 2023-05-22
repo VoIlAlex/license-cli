@@ -48,7 +48,7 @@ setup(
         'Click==7.0',
         'loguru==0.4.1',
         'appdata==1.2.0',
-        'requests==2.21.0'
+        'requests==2.31.0'
 	],
 	# https://pypi.org/classifiers/ 
 	classifiers=[
