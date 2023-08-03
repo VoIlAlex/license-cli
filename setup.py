@@ -46,7 +46,7 @@ setup(
 	# List of packages to install with this one 
 	install_requires=[
         'Click==7.0',
-        'loguru==0.4.1',
+        'loguru==0.5.3',
         'appdata==1.2.0',
         'requests==2.21.0'
 	],
